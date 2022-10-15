@@ -1,16 +1,14 @@
 import express from 'express';
 import Operacoes from '../controllers/operacoes.js';
 
-const app = express()
+const router = express.Router();
 
-app.use(express.json())
+router
+    .get('/adicao', (req, res) => {
+    res.status(200).send("oi")
+    })
+    .get('/subtracao/:id', Operacoes.subtracao)
+    .get('/multiplicacao/:id', Operacoes.multiplicacao)
+    .get('/divisao/:id', Operacoes.divisao)
 
-//rotas disponíveis
-
-app.get('/adicao/:id', Operacoes.adicao);
-
-app.get('/subtracao/:id', Operacoes.subtracao);
-
-app.get('/multiplicacao/:id', Operacoes.multiplicacao);
-
-app.get('/divisao/:id', Operacoes.divisao);
+export default router;
