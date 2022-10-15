@@ -1,17 +1,17 @@
 import test from "node:test"
 import Operacoes from "../controllers/operacoes.js"
 
-// Testes na operação de soma
-test('verifica operação de soma', () => {
-    expect(Operacoes.soma(2,2)).toBe(4)
+// Testes na operação de adição
+test('verifica operação de adição', () => {
+    expect(Operacoes.adicao(2,2)).toBe(4)
 })
 
-test('verifica operação de soma', () => {
-    expect(Operacoes.soma('a',2)).toBe('erro')
+test('verifica operação de adição', () => {
+    expect(Operacoes.adicao('a',2)).toBe('erro')
 })
 
-test('verifica operação de soma', () => {
-    expect(Operacoes.soma(1,'$')).toBe('erro')
+test('verifica operação de adição', () => {
+    expect(Operacoes.adicao(1,'$')).toBe('erro')
 })
 
 // Testes na operação de subtração
