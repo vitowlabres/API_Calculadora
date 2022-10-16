@@ -1,9 +1,22 @@
-import test from "node:test"
-import Operacoes from "../controllers/operacoes.js"
+const Operacoes = require("../controllers/operacoes.js") 
+
+const objTesteOK = {
+    query: { n1: '4', n2: '2' }
+}
+
+const objTesteErro1 = {
+    query: { n1: 'a', n2: '2' },
+}
+
+const objTesteErro2 = {
+    n1: 'a',
+    n2: 2
+}
+
 
 // Testes na operação de adição
 test('verifica operação de adição', () => {
-    expect(Operacoes.adicao(2,2)).toBe(4)
+    expect(Operacoes.adicao(objTesteOK,)).toBe(6)
 })
 
 test('verifica operação de adição', () => {

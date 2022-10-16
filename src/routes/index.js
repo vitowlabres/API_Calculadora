@@ -1,5 +1,5 @@
-import express from 'express';
-import router from './operacoesRoutes.js'
+const express = require('express');
+const router = require('./operacoesRoutes.js');
 
 const routes = (app) => {
     app.route('/').get((req, res) => {
@@ -18,4 +18,4 @@ const routes = (app) => {
     )
 }
 
-export default routes
+module.exports = routes

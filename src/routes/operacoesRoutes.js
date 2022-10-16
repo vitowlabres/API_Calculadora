@@ -1,5 +1,5 @@
-import express from 'express';
-import Operacoes from '../controllers/operacoes.js';
+const express = require ('express');
+const Operacoes = require ('../controllers/operacoes.js');
 
 const router = express.Router();
 
@@ -9,4 +9,4 @@ router
     .get('/multiplicacao/:id', Operacoes.multiplicacao)
     .get('/divisao/:id', Operacoes.divisao)
 
-export default router;
+module.exports = router;
