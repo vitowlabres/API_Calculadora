@@ -1,67 +1,53 @@
-const Operacoes = require("../controllers/operacoes.js") 
-
-const objTesteOK = {
-    query: { n1: '4', n2: '2' }
-}
-
-const objTesteErro1 = {
-    query: { n1: 'a', n2: '2' },
-}
-
-const objTesteErro2 = {
-    n1: 'a',
-    n2: 2
-}
-
+const Calculadora = require("../models/Calculadora.js") 
 
 // Testes na operação de adição
 test('verifica operação de adição', () => {
-    expect(Operacoes.adicao(objTesteOK,)).toBe(6)
+    expect(Calculadora.adicao(4,2).resultado).toBe(6)
 })
 
 test('verifica operação de adição', () => {
-    expect(Operacoes.adicao('a',2)).toBe('erro')
+    expect(Calculadora.adicao('a',2).resultado).toBe('ERRO! Pelo menos um dos valores informados não é um número')
 })
 
 test('verifica operação de adição', () => {
-    expect(Operacoes.adicao(1,'$')).toBe('erro')
+    expect(Calculadora.adicao(1,'$').resultado).toBe('ERRO! Pelo menos um dos valores informados não é um número')
 })
 
 // Testes na operação de subtração
 test('verifica operação de subtração', () => {
-    expect(Operacoes.subtracao(5,2)).toBe(3)
+    expect(Calculadora.subtracao(5,2).resultado).toBe(3)
 })
 
 test('verifica operação de subtração', () => {
-    expect(Operacoes.subtracao('X',4)).toBe('erro')
+    expect(Calculadora.subtracao('X',4).resultado).toBe('ERRO! Pelo menos um dos valores informados não é um número')
 })
 
 test('verifica operação de subtração', () => {
-    expect(Operacoes.subtracao(3,'(')).toBe('erro')
+    expect(Calculadora.subtracao(3,'(').resultado).toBe('ERRO! Pelo menos um dos valores informados não é um número')
 })
 
 // Testes na operação de multiplicação
 test('verifica operação de multiplicação', () => {
-    expect(Operacoes.multiplicacao(3,5)).toBe(15)
+    expect(Calculadora.multiplicacao(3,5).resultado).toBe(15)
 })
 
 test('verifica operação de multiplicação', () => {
-    expect(Operacoes.multiplicacao(3,'a')).toBe('erro')
+    expect(Calculadora.multiplicacao(3,'a').resultado).toBe('ERRO! Pelo menos um dos valores informados não é um número')
 })
 
 test('verifica operação de multiplicação', () => {
-    expect(Operacoes.multiplicacao('@',5)).toBe('erro')
+    expect(Calculadora.multiplicacao('@',5).resultado).toBe('ERRO! Pelo menos um dos valores informados não é um número')
 })
 
 //Testes na operação de divisão
 test('verifica operação de divisão', () => {
-    expect(Operacoes.divisao(4,2)).toBe(2)
+    expect(Calculadora.divisao(4,2).resultado).toBe(2)
 })
 
 test('verifica operação de divisão', () => {
-    expect(Operacoes.divisao('s',2)).toBe('erro')
+    expect(Calculadora.divisao('s',2).resultado).toBe('ERRO! Pelo menos um dos valores informados não é um número')
 })
 
 test('verifica operação de divisão', () => {
-    expect(Operacoes.divisao(4,'-')).toBe('erro')
+    expect(Calculadora.divisao(4,'-').resultado).toBe('ERRO! Pelo menos um dos valores informados não é um número')
 })
