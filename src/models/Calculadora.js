@@ -49,6 +49,20 @@ class Calculadora
             }
         }
     }
+
+    static divisao(num1, num2) {
+        if (this.verificaNum(num1, num2) === true) {
+            return {
+                num1: Number(num1),
+                num2: Number(num2),
+                resultado: Number(num1)/Number(num2)
+            }
+        } else {
+            return {
+                resultado: 'ERRO! Pelo menos um dos valores informados não é um número'
+            }
+        }
+    }
 }
 
 module.exports = Calculadora
