@@ -5,8 +5,8 @@ const router = express.Router();
 
 router
     .get('/adicao', Operacoes.adicao)
-    .get('/subtracao/:id', Operacoes.subtracao)
-    .get('/multiplicacao/:id', Operacoes.multiplicacao)
-    .get('/divisao/:id', Operacoes.divisao)
+    .get('/subtracao', Operacoes.subtracao)
+    .get('/multiplicacao', Operacoes.multiplicacao)
+    .get('/divisao', Operacoes.divisao)
 
 module.exports = router;
